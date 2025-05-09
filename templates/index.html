@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>DXF 转 G-code 在线转换</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 2em; background: #f5f5f5; }
+        .container { max-width: 600px; margin: auto; padding: 2em; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #1976d2; }
+        .upload-form { display: flex; flex-direction: column; gap: 1em; }
+        input[type="file"] { padding: 0.5em; }
+        button { padding: 0.75em; font-size: 1em; color: #fff; background: #1976d2; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1565c0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DXF 转 G-code 在线转换</h1>
+        <form class="upload-form" action="/convert" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".dxf" required>
+            <input type="number" name="offset_x" placeholder="X 偏移 (mm)" step="0.01" value="0">
+            <input type="number" name="offset_y" placeholder="Y 偏移 (mm)" step="0.01" value="0">
+            <button type="submit">上传并转换</button>
+        </form>
+    </div>
+</body>
+</html>
